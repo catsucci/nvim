@@ -142,7 +142,7 @@ return { -- LSP Configuration & Plugins
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
       tsserver = {},
-      --
+      kotlin_language_server = {},
 
       lua_ls = {
         -- cmd = {...},
@@ -193,6 +193,7 @@ return { -- LSP Configuration & Plugins
       -- Linters
       'selene',
       'shellcheck',
+      'ktlint',
       -- Formatter
       'clang-format',
       'stylua',
