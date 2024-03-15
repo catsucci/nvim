@@ -4,16 +4,15 @@ return {
   },
 
   { -- See `:help gitsigns` to understand what the configuration keys do
-    "lewis6991/gitsigns.nvim",
-    event = "VimEnter",
+    'lewis6991/gitsigns.nvim',
+    event = 'VimEnter',
     opts = {
       signs = {
-        add = { text = "▎" },
-        change = { text = "▎" },
-        delete = { text = "" },
-        topdelete = { text = "" },
-        changedelete = { text = "▎" },
-        untracked = { text = "▎" },
+        add = { text = '+' },
+        change = { text = '~' },
+        delete = { text = '_' },
+        topdelete = { text = '‾' },
+        changedelete = { text = '~' },
       },
       on_attach = function(buffer)
         local gs = package.loaded.gitsigns
@@ -37,4 +36,5 @@ return {
         map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
       end,
     },
-  } }
+  },
+}
