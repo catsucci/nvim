@@ -73,8 +73,9 @@ vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = '[Y]ank to clipboard', remap 
 
 vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete into the void register', remap = true })
 
--- Git
-vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
+-- Git -Vim Fugitive
+vim.keymap.set('n', '<leader>gs', '<cmd>Git<CR>')
+vim.keymap.set('n', '<leader>gp', '<cmd>Git push<CR>')
 
 -- This is going to get me cancelled, sais prime
 vim.keymap.set('i', '<C-c>', '<Esc>')
@@ -133,4 +134,3 @@ end, { desc = '[R]eplace in files ([S]pectre)' })
 
 -- Redefine Emmet default trigger key
 vim.g.user_emmet_leader_key = '<C-,>'
-
