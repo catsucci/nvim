@@ -73,6 +73,9 @@ vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = '[Y]ank to clipboard', remap 
 
 vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete into the void register', remap = true })
 
+-- Git
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
+
 -- This is going to get me cancelled, sais prime
 vim.keymap.set('i', '<C-c>', '<Esc>')
 
