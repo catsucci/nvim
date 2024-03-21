@@ -75,6 +75,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete into the voi
 
 -- Git -Vim Fugitive
 vim.keymap.set('n', '<leader>gs', '<cmd>Git<CR>')
+vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<CR>')
 vim.keymap.set('n', '<leader>gp', '<cmd>Git push<CR>')
 
 -- This is going to get me cancelled, sais prime
