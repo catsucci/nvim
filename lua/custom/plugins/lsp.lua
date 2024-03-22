@@ -182,6 +182,7 @@ return { -- LSP Configuration & Plugins
       'tailwindcss-language-server',
       'texlab',
       'typescript-language-server',
+      'cmake-language-server',
       -- Linters
       'selene',
       'shellcheck',
