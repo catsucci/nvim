@@ -100,10 +100,10 @@ vim.keymap.set('n', '<C-f>', '<cmd>silent ! tmux neww ~/.scripts/tmux.sessionize
 
 -- Harpoon keymaps
 
-vim.keymap.set('n', '<leader>ha', function()
+vim.keymap.set('n', '<A-a>', function()
   require('harpoon.mark').add_file()
 end, { desc = '[A]dd file', remap = true })
-vim.keymap.set('n', '<leader>ht', function()
+vim.keymap.set('n', '<A-h>', function()
   require('harpoon.ui').toggle_quick_menu()
 end, { desc = '[T]oggle quick menu', remap = true })
 vim.keymap.set('n', '<A-1>', function()
