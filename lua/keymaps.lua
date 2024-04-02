@@ -73,10 +73,16 @@ vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = '[Y]ank to clipboard', remap 
 
 vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete into the void register', remap = true })
 
--- Git -Vim Fugitive
-vim.keymap.set('n', '<leader>gs', '<cmd>Git<CR>')
-vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<CR>')
-vim.keymap.set('n', '<leader>gp', '<cmd>Git push<CR>')
+-- Git
+vim.keymap.set('n', '<leader>gs', vim.cmd.Neogit, { desc = '[G]it [S]tatus', silent = true })
+vim.keymap.set('n', '<leader>gc', ':Neogit commit<CR>', { silent = true })
+vim.keymap.set('n', '<leader>gp', ':Neogit pull<CR>', { silent = true })
+vim.keymap.set('n', '<leader>gP', ':Neogit push<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>gb', ':Telescope git_branches<CR>', { silent = true })
+vim.keymap.set('n', '<leader>gB', ':G blame<CR>', { silent = true })
+vim.keymap.set('n', '<leader>gdo', ':DiffviewOpen<CR>', { silent = true })
+vim.keymap.set('n', '<leader>gdc', ':DiffviewClose<CR>', { silent = true })
+vim.keymap.set('n', '<leader>gdtf', ':DiffviewToggleFiles<CR>', { silent = true })
 
 -- This is going to get me cancelled, sais prime
 vim.keymap.set('i', '<C-c>', '<Esc>')
@@ -135,3 +141,36 @@ end, { desc = '[R]eplace in files ([S]pectre)' })
 
 -- Redefine Emmet default trigger key
 vim.g.user_emmet_leader_key = '<C-,>'
+
+-- Define a Lua function to create a small terminal at the bottom of the screen
+function small_terminal()
+  vim.cmd 'new'
+  vim.cmd 'wincmd J'
+  vim.api.nvim_win_set_height(0, 12)
+  vim.cmd 'set winfixheight'
+  vim.cmd 'term'
+  vim.cmd 'set nonumber'
+  vim.cmd 'set nornu'
+end
+
+-- Create a key mapping for the small_terminal function
+vim.keymap.set('n', '<c-/>', ':lua small_terminal()<CR>', { noremap = true, silent = true })
+
+-- Toggle display of LSP diagnostics
+local diagnostic_visible = true
+function toggle_lsp_diagnostics()
+  diagnostic_visible = not diagnostic_visible
+  vim.diagnostic.config {
+    virtual_text = diagnostic_visible,
+    signs = diagnostic_visible,
+    underline = diagnostic_visible,
+  }
+end
+
+-- Set up key mapping to toggle diagnostics
+vim.keymap.set(
+  'n',
+  '<leader>tD',
+  ':lua toggle_lsp_diagnostics()<CR>',
+  { desc = '[T]oggle [D]iagnostic ', silent = true }
+)

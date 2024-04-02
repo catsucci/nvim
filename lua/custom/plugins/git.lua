@@ -2,17 +2,31 @@ return {
   { -- The greatest git plugin
     'tpope/vim-fugitive',
   },
+  {
+    {
+      'NeogitOrg/neogit',
+      dependencies = {
+        'nvim-lua/plenary.nvim', -- required
+        'sindrets/diffview.nvim', -- optional - Diff integration
+
+        -- Only one of these is needed, not both.
+        'nvim-telescope/telescope.nvim', -- optional
+        'ibhagwan/fzf-lua', -- optional
+      },
+      config = true,
+    },
+  },
 
   { -- See `:help gitsigns` to understand what the configuration keys do
     'lewis6991/gitsigns.nvim',
     event = 'VimEnter',
     opts = {
       signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
+        add = { hl = 'GitSignsAdd', text = '│', numhl = 'GitSignsAddNr' },
+        change = { hl = 'GitSignsChange', text = '│', numhl = 'GitSignsChangeNr' },
+        delete = { hl = 'GitSignsDelete', text = '_', numhl = 'GitSignsDeleteNr' },
+        topdelete = { hl = 'GitSignsDelete', text = '‾', numhl = 'GitSignsDeleteNr' },
+        changedelete = { hl = 'GitSignsDelete', text = '~', numhl = 'GitSignsChangeNr' },
       },
       on_attach = function(bufnr)
         -- Include essential gitsigns keymaps, for more see gitsigns README:
