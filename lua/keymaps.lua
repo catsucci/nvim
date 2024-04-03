@@ -90,8 +90,8 @@ vim.keymap.set('i', '<C-c>', '<Esc>')
 -- Undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Toggle [U]ndotree', remap = true })
 
--- Formatting keymap
-vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'LSP: file [F]ormat', remap = true })
+-- Formatting keymap -Switched to using Conform plugin-
+-- vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'LSP: file [F]ormat', remap = true })
 
 -- Renaming with ThePrimeagen's way
 vim.keymap.set(
