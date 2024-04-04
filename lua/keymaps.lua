@@ -140,8 +140,8 @@ vim.keymap.set('n', '<leader>rs', function()
 end, { desc = '[R]eplace in files ([S]pectre)' })
 
 -- Replace HEX colors with HSL
-vim.keymap.set("n", "<leader>R", function()
-	require("custom.utils.hex-to-hsl").replaceHexWithHSL()
+vim.keymap.set('n', '<leader>R', function()
+  require('custom.utils.hex-to-hsl').replaceHexWithHSL()
 end)
 
 -- Redefine Emmet default trigger key
