@@ -1,40 +1,35 @@
 return {
   {
     'folke/zen-mode.nvim',
-    config = function()
-      vim.keymap.set('n', '<leader>tz', function()
-        require('zen-mode').setup {
-          window = {
-            width = 90,
-            options = {},
-          },
-        }
-        require('zen-mode').toggle()
-        vim.wo.wrap = false
-        vim.wo.number = true
-        vim.wo.rnu = true
-      end, {
-        desc = '[T]oggle [Z]en mode',
-        remap = true,
-      })
-
-      vim.keymap.set('n', '<leader>tZ', function()
-        require('zen-mode').setup {
-          window = {
-            width = 80,
-            options = {},
-          },
-        }
-        require('zen-mode').toggle()
-        vim.wo.wrap = false
-        vim.wo.number = false
-        vim.wo.rnu = false
-        vim.opt.colorcolumn = '0'
-      end, {
-        desc = '[T]oggle the [Z]en mode',
-        remap = true,
-      })
-    end,
+    cmd = 'ZenMode',
+    opts = {
+      window = {
+        backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
+        -- height and width can be:
+        -- * an absolute number of cells when > 1
+        -- * a percentage of the width / height of the editor when <= 1
+        -- * a function that returns the width or the height
+        width = 120, -- width of the Zen window
+        height = 1, -- height of the Zen window
+        -- by default, no options are changed for the Zen window
+        -- uncomment any of the options below, or add other vim.wo options you want to apply
+        options = {
+          -- signcolumn = "no", -- disable signcolumn
+          number = false, -- disable number column
+          relativenumber = false, -- disable relative numbers
+          -- cursorline = false, -- disable cursorline
+          -- cursorcolumn = false, -- disable cursor column
+          -- foldcolumn = "0", -- disable fold column
+          -- list = false, -- disable whitespace characters
+        },
+      },
+      plugins = {
+        gitsigns = true,
+        tmux = true,
+        kitty = { enabled = false, font = '+2' },
+      },
+    },
+    keys = { { '<leader>tz', '<cmd>ZenMode<cr>', desc = 'Zen Mode' } },
   },
   {
     -- Lua
