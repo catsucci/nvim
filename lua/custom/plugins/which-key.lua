@@ -11,7 +11,7 @@ return { -- Useful plugin to show you pending keybinds.
       ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
       ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
       ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-      ['<leader>p'] = { name = 'Vim Ex[P]lorer', _ = 'which_key_ignore' },
+      ['<leader>p'] = { name = '[P]rime\'s', _ = 'which_key_ignore' },
       ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
       ['<leader>gd'] = { name = '[G]it [D]iff', _ = 'which_key_ignore' },
       ['<leader>gdt'] = { name = '[G]it [D]iff [T]oggle', _ = 'which_key_ignore' },
