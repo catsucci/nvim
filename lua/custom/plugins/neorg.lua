@@ -14,9 +14,23 @@ return {
         ['core.dirman'] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
-              notes = '~/notes',
+              my_ws = '~/neorg',
+              personal = '~/neorg/personal',
+              default = '~/neorg/personal',
+              notes = '~/neorg/notes',
+              work = '~/neorg/work',
+              design = '~/neorg/design',
+              ideas = '~/neorg/ideas',
+              learning = '~/neorg/learning',
+              reference = '~/neorg/reference',
+              archive = '~/neorg/archive',
+              -- internships
+              internship_fcpo = '~/neorg/internships/internship_fcpo',
+              -- projects
+              project_coc = '~/neorg/projects/project_coc',
+              project_isketch = '~/neorg/projects/project_isketch',
             },
-            default_workspace = 'notes',
+            index = 'index.norg',
           },
         },
       },

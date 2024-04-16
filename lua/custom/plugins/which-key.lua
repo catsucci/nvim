@@ -18,6 +18,7 @@ return { -- Useful plugin to show you pending keybinds.
       ['<leader>x'] = { name = 'Trouble', _ = 'which_key_ignore' },
       ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
       ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
+      ['<leader>n'] = { name = '[N]eorg', _ = 'which_key_ignore' },
     }
     -- visual mode
     require('which-key').register({

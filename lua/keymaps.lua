@@ -87,6 +87,22 @@ vim.keymap.set('n', '<leader>gdo', ':DiffviewOpen<CR>', { silent = true })
 vim.keymap.set('n', '<leader>gdc', ':DiffviewClose<CR>', { silent = true })
 vim.keymap.set('n', '<leader>gdtf', ':DiffviewToggleFiles<CR>', { silent = true })
 
+-- Neorg
+vim.keymap.set('n', '<leader>nm', ':Neorg workspace my_ws<CR>', { silent = true })
+vim.keymap.set('n', '<leader>np', ':Neorg workspace personal<CR>', { silent = true })
+vim.keymap.set('n', '<leader>nn', ':Neorg workspace notes<CR>', { silent = true })
+vim.keymap.set('n', '<leader>nw', ':Neorg workspace work<CR>', { silent = true })
+vim.keymap.set('n', '<leader>nd', ':Neorg workspace design<CR>', { silent = true })
+vim.keymap.set('n', '<leader>ni', ':Neorg workspace ideas<CR>', { silent = true })
+vim.keymap.set('n', '<leader>nl', ':Neorg workspace learning<CR>', { silent = true })
+vim.keymap.set('n', '<leader>nr', ':Neorg workspace reference<CR>', { silent = true })
+vim.keymap.set('n', '<leader>na', ':Neorg workspace archive<CR>', { silent = true })
+-- internships
+vim.keymap.set('n', '<leader>nIf', ':Neorg workspace internship_fcpo<CR>', { silent = true })
+-- projects
+vim.keymap.set('n', '<leader>nPc', ':Neorg workspace project_coc<CR>', { silent = true })
+vim.keymap.set('n', '<leader>nPi', ':Neorg workspace project_isketch<CR>', { silent = true })
+
 -- This is going to get me cancelled, sais prime
 vim.keymap.set('i', '<C-c>', '<Esc>')
 

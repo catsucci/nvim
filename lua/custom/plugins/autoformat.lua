@@ -26,15 +26,14 @@ return { -- Autoformat
     lsp_fallback = true,
     formatters_by_ft = {
       lua = { 'stylua' },
+      python = { "black" },
       -- Conform can also run multiple formatters sequentially
-      -- python = { "isort", "black" },
-      --
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
       javascript = { { 'prettierd', 'prettier' } },
       css = { { 'prettierd', 'prettier' } },
       cpp = { 'clang-format' },
-      kotlin = { 'ktlint' },
+      -- kotlin = { 'ktlint' },
       -- run the command clang-format -style=GNU -dump-config > .clang-format
       -- to generate a new .clang-format file in the root of your cpp directory
     },
