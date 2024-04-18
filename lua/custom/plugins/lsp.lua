@@ -177,6 +177,7 @@ return { -- LSP Configuration & Plugins
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       -- LSP
+      'eslint-lsp',
       'css-lsp',
       'html-lsp',
       'tailwindcss-language-server',
@@ -191,8 +192,8 @@ return { -- LSP Configuration & Plugins
       'clang-format',
       'stylua',
       'shfmt',
-      'prettier',
-      'prettierd',
+      -- 'prettier',
+      -- 'prettierd',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
