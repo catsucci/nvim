@@ -6,7 +6,7 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- exit insert mode with jk
-vim.keymap.set("i", "jk", "<ESC>")
+vim.keymap.set('i', 'jk', '<ESC>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
@@ -161,8 +161,10 @@ end, { desc = '[R]eplace in files ([S]pectre)' })
 -- Replace HEX colors with HSL
 vim.keymap.set('n', '<leader>R', function()
   require('custom.utils.hex-to-hsl').replaceHexWithHSL()
-end,
-{ desc ="Replace HEX color with HSLA"})
+end, { desc = 'Replace HEX color with HSLA' })
+
+-- Redefine Emmet default trigger key
+vim.g.user_emmet_leader_key = '<C-n>'
 
 -- Define a Lua function to create a small terminal at the bottom of the screen
 function small_terminal()
@@ -176,7 +178,12 @@ function small_terminal()
 end
 
 -- Create a key mapping for the small_terminal function
-vim.keymap.set('n', '<c-/>', ':lua small_terminal()<CR>', { noremap = true, silent = true })
+vim.keymap.set(
+  'n',
+  '<leader>tt',
+  ':lua small_terminal()<CR>',
+  { desc = '[T]oggle [T]erminal', noremap = true, silent = true }
+)
 
 -- Toggle display of LSP diagnostics
 local diagnostic_visible = true
