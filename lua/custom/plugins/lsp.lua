@@ -193,7 +193,7 @@ return { -- LSP Configuration & Plugins
       'stylua',
       'shfmt',
       -- 'prettier',
-      -- 'prettierd',
+      'prettierd',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
