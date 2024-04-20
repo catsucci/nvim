@@ -164,7 +164,7 @@ vim.keymap.set('n', '<leader>R', function()
 end, { desc = 'Replace HEX color with HSLA' })
 
 -- Redefine Emmet default trigger key
-vim.g.user_emmet_leader_key = '<C-n>'
+vim.g.user_emmet_leader_key = '<C-\\>'
 
 -- Define a Lua function to create a small terminal at the bottom of the screen
 function small_terminal()
