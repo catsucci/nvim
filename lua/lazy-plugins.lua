@@ -53,4 +53,5 @@ require('lazy').setup({
     -- default lazy.nvim defined Nerd Font icons otherwise define a unicode icons table
     icons = {},
   },
+    change_detection = { notify = false }
 })
