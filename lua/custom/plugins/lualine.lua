@@ -1,28 +1,16 @@
 return {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'nvim-web-devicons' },
-  config = function()
-    require('lualine').setup({
+  {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-web-devicons' },
+    event = 'VeryLazy',
+    opts = {
       options = {
         icons_enabled = true,
+        theme = 'auto',
         component_separators = '|',
-        section_separators = '',
+        section_separators = { left = '', right = '' },
+        -- component_separators = { left = '', right = '' }
       },
-      sections = {
-        lualine_x = {
-          {
-            -- Your custom mode component or configuration
-            -- For example:
-            -- require('noice').api.statusline.mode.get,
-            -- cond = require('noice').api.statusline.mode.has,
-            color = { fg = '#ff9e64' },
-          },
-        },
-        lualine_a = {
-          'buffers',
-        },
-      },
-    })
-  end,
+    },
+  },
 }
-
